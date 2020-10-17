@@ -3,6 +3,9 @@ input.onButtonPressed(Button.A, function () {
     basic.showString("(A) N")
     radio.sendString("Nuke")
 })
+input.onGesture(Gesture.TiltLeft, function () {
+    basic.showString("Developed by")
+})
 input.onGesture(Gesture.ScreenUp, function () {
     basic.showIcon(IconNames.Asleep)
     game.resume()
@@ -54,6 +57,9 @@ input.onButtonPressed(Button.B, function () {
     game.addScore(1)
     basic.showString("(B) O")
     radio.sendString("Orbital strike")
+})
+input.onGesture(Gesture.TiltRight, function () {
+    basic.showString("Matthew Campbell")
 })
 game.setScore(0)
 basic.showString("(A) N (B) O")
