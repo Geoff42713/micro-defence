@@ -5,6 +5,10 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onGesture(Gesture.ScreenUp, function () {
     basic.showIcon(IconNames.Asleep)
+    game.resume()
+})
+input.onGesture(Gesture.ScreenDown, function () {
+    game.pause()
 })
 input.onButtonPressed(Button.AB, function () {
     basic.showNumber(game.score())
