@@ -3,13 +3,6 @@ input.onButtonPressed(Button.A, function () {
     basic.showString("(A) N")
     radio.sendString("Nuke")
 })
-input.onGesture(Gesture.TiltLeft, function () {
-    basic.showString("Developed by")
-})
-input.onGesture(Gesture.ScreenUp, function () {
-    basic.showIcon(IconNames.Asleep)
-    game.resume()
-})
 input.onGesture(Gesture.ScreenDown, function () {
     game.pause()
 })
@@ -17,6 +10,7 @@ input.onButtonPressed(Button.AB, function () {
     basic.showNumber(game.score())
 })
 radio.onReceivedString(function (receivedString) {
+    game.removeLife(1)
     basic.showLeds(`
         # # # # #
         # . # . #
@@ -58,16 +52,14 @@ input.onButtonPressed(Button.B, function () {
     basic.showString("(B) O")
     radio.sendString("Orbital strike")
 })
-input.onGesture(Gesture.TiltRight, function () {
-    basic.showString("Matthew Campbell")
-})
-radio.setGroup(420)
 game.setScore(0)
+game.addLife(16)
+radio.setGroup(420)
 basic.showString("(A) N (B) O")
 basic.showLeds(`
     # . . . #
-    . # . # .
-    . # . # .
-    . # . # .
+    # . . . #
+    # . . . #
+    # . . . #
     # . . . #
     `)
