@@ -52,6 +52,7 @@ input.onButtonPressed(Button.B, function () {
     basic.showString("(B) O")
     radio.sendString("Orbital strike")
 })
+basic.showNumber(input.lightLevel())
 game.setScore(0)
 game.addLife(16)
 radio.setGroup(420)
