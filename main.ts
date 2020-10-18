@@ -61,6 +61,7 @@ input.onButtonPressed(Button.B, function () {
 input.onGesture(Gesture.TiltRight, function () {
     basic.showString("Matthew Campbell")
 })
+radio.setGroup(420)
 game.setScore(0)
 basic.showString("(A) N (B) O")
 basic.showLeds(`
